@@ -4,7 +4,7 @@ def main(s):
         print(s)
         return
     l = []
-    for i in range(1, len(s)+1):
+    for i in range(len(s)):
         l.append(s[i:]+s[:i])
     print(min(l))
     print(max(l))
