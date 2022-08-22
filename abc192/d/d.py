@@ -4,13 +4,21 @@ def calc(n):
         ret += (n**i) * int(num)
     return ret
 
-def sovled():    
+def sovled():
+    # Xの桁数がM以下の時は１種類しか存在しない
+    if len(x) == 1:
+        if int(x) <= m:
+            print(1)
+        else:
+            print(0)
+        return
+    
     base = 0
     for i in range(10):
         if str(i) in x:
             base = i
 
-    left, right = base, m
+    left, right = base, 1 << 100
     while right - left > 1:
         mid = (left + right) // 2
         # print(f'{left=}, {mid=}, {right=}')
